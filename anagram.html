@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title> EXPERIMENT-4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style> 
+            p{
+                font:bold  italic large ;
+                font-family: Copperplate Gothic Light;
+                color:crimson;
+            }
+            h1{   
+                    font-family: Copperplate Gothic Light;
+                    color:forestgreen;
+            }
+        </style> 
+      
+    </head>
+    <body>
+        <h1>TO CHECK THE GIVEN STRINGS ARE ANAGRAMS OR NOT</h1>
+        <p> <b>We convert the string to an array, use the Array.sort()<br>
+            method to sort it and convert it back to a string. Then we compare both strings and check if they are the same.</b></p>
+          <script>
+              function anagrams(stringA, stringB)
+  {        
+        stringA = stringA.replace(/[^\w]/g, '').toLowerCase()
+        stringB = stringB.replace(/[^\w]/g, '').toLowerCase()
+    function sortString(string) 
+    {
+        return string.split('').sort().join('');
+    }
+    let str1=sortString(stringA);
+     let str2=sortString(stringB);
+   if(str1 === str2)
+   {
+        
+        document.write("ARE ANAGRAMS");
+        document.write("<br>");
+        document.write(stringB );
+     }   
+   else
+   {
+       document.write("NOT ANAGRAMS");
+       document.write("<br>");
+       document.write(stringB);
+   }
+   return stringA;
+}
+document.write(anagrams("listen", "silent"));
+document.write("<br>");
+document.write(anagrams("nestle", "ernest"));
+document.write("<br>");
+document.write(anagrams("carpool", "carloop"));
+</script>    
+    </body>
+</html>
+
